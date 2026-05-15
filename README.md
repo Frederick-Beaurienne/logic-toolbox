@@ -75,6 +75,8 @@ mvn spring-boot:run
 
 # 🌐 Documentation API
 
+Le projet utilise Swagger/OpenAPI pour documenter automatiquement les endpoints REST.
+
 La documentation Swagger est disponible à l'adresse suivante :
 
 ```text

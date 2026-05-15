@@ -51,4 +51,45 @@ class StringServiceTest {
             assertEquals(3, result);
         }
     }
+
+    @Nested
+    @DisplayName("Tests de formatGreeting")
+    class FormatGreetingTests {
+
+        @Test
+        @DisplayName("Doit retourner une salutation avec prénom formaté")
+        void shouldReturnFormattedGreeting() {
+
+            String result = stringService.formatGreeting("jean-pierre");
+
+            assertEquals("Bonjour Jean-Pierre", result);
+        }
+
+        @Test
+        @DisplayName("Doit retourner Bonjour pour une chaîne vide")
+        void shouldReturnDefaultGreetingForEmptyInput() {
+
+            String result = stringService.formatGreeting("");
+
+            assertEquals("Bonjour", result);
+        }
+
+        @Test
+        @DisplayName("Doit retourner Bonjour pour une valeur null")
+        void shouldReturnDefaultGreetingForNullInput() {
+
+            String result = stringService.formatGreeting(null);
+
+            assertEquals("Bonjour", result);
+        }
+
+        @Test
+        @DisplayName("Doit formater correctement les majuscules et minuscules")
+        void shouldFormatUpperAndLowerCasesCorrectly() {
+
+            String result = stringService.formatGreeting("jEaN-pIErRe");
+
+            assertEquals("Bonjour Jean-Pierre", result);
+        }
+    }
 }

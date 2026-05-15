@@ -15,14 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/string")
 @RequiredArgsConstructor
 @Validated
-@Tag(name = "String", description = "Endpoints de manipulation de chaînes de caractères")
+@Tag(
+        name = "String",
+        description = "API de manipulation de chaînes de caractères"
+)
 public class StringController {
 
     private final StringService stringService;
 
     @GetMapping("/length-without-spaces")
     @Operation(
-            summary = "Retourne la longueur d'une chaîne sans les espaces",
+            summary = "Calcule la longueur d'une chaîne sans les espaces",
             description = "Supprime tous les espaces d'une chaîne puis retourne sa longueur"
     )
     public int getLengthWithoutSpaces(
@@ -31,5 +34,18 @@ public class StringController {
             String input
     ) {
         return stringService.getLengthWithoutSpaces(input);
+    }
+
+    @GetMapping("/greeting")
+    @Operation(
+            summary = "Retourne une salutation personnalisée",
+            description = "Met la première lettre du prénom en majuscule puis retourne une salutation"
+    )
+    public String formatGreeting(
+            @RequestParam
+            @NotBlank(message = "Le paramètre input ne peut pas être vide")
+            String input
+    ) {
+        return stringService.formatGreeting(input);
     }
 }
