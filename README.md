@@ -9,8 +9,8 @@
 - [Installation](#️-installation)
 - [Documentation API](#-documentation-api)
 - [Format des réponses API](#-format-des-réponses-api)
-- [Gestion des erreurs API](#-gestion-des-erreurs-api)
 - [Collection Insomnia](#-collection-insomnia)
+- [Gestion des erreurs API](#-gestion-des-erreurs-api)
 - [Fonctionnalités disponibles](#-fonctionnalités-disponibles)
 - [Exécution des tests](#-exécution-des-tests)
 
@@ -34,6 +34,8 @@ Le projet expose également les différentes fonctionnalités via une API REST d
 
 Le choix a été fait de traiter ce sujet avec une approche proche d'une mise en œuvre backend réelle.
 
+Une attention particulière a également été portée à la gestion des cas réels et des limitations métier des exercices proposés (gestion Unicode, accents, normalisation de texte, compromis de correction automatique, etc.).
+
 Au-delà de la résolution des exercices demandés, le projet intègre :
 - une architecture Spring Boot en couches
 - une exposition des fonctionnalités via API REST
@@ -53,6 +55,10 @@ L'objectif est de proposer une implémentation complète mettant en avant :
 - la réutilisabilité des composants
 - les bonnes pratiques de développement backend
 
+Certaines implémentations intègrent volontairement des compromis techniques afin de conserver un équilibre entre simplicité algorithmique, lisibilité et pertinence métier.
+
+Par exemple, la normalisation des répétitions de caractères conserve les doubles lettres légitimes ("belle"), tout en réduisant les répétitions excessives liées aux erreurs de frappe ("Bonjouuuur" → "Bonjour"). Certaines situations ambiguës restent volontairement tolérées dans le cadre du périmètre de l'exercice.
+
 Le projet a volontairement été conçu comme une mini application exploitable plutôt qu'une simple collection de fonctions isolées.
 
 Cette approche permet également de démontrer les choix techniques et les bonnes pratiques qui seraient appliqués dans un contexte de développement réel.
@@ -65,6 +71,9 @@ Cette approche permet également de démontrer les choix techniques et les bonne
 src
 ├── main
 │   └── java/com/fred/logictoolbox
+│       ├── common
+│       │   ├── exception
+│       │   └── response
 │       ├── controller
 │       ├── service
 │       │   ├── arrayobject
@@ -74,6 +83,7 @@ src
 │
 └── test
     └── java/com/fred/logictoolbox
+        ├── controller
         └── service
 ```
 
@@ -117,16 +127,6 @@ La documentation Swagger est disponible à l'adresse suivante :
 http://localhost:8080/swagger-ui/index.html
 ```
 
-# 🧪 Collection Insomnia
-
-Une collection Insomnia exportée est disponible afin de faciliter le test des différents endpoints de l'API.
-
-Emplacement :
-
-```text
-docs/insomnia/
-```
-
 ---
 
 # 📦 Format des réponses API
@@ -141,6 +141,18 @@ Les endpoints REST utilisent un format de réponse standardisé afin de garantir
   "message": "Longueur calculée avec succès",
   "data": 15
 }
+```
+
+---
+
+# 🧪 Collection Insomnia
+
+Une collection Insomnia exportée est disponible afin de faciliter le test des différents endpoints de l'API.
+
+Emplacement :
+
+```text
+docs/insomnia/
 ```
 
 ---
@@ -161,25 +173,25 @@ L'application utilise un Global Exception Handler afin de centraliser la gestion
 
 ---
 
-# ✅ Fonctionnalités disponibles
+# 🚀 Fonctionnalités disponibles
 
 ## String
 
-### Longueur d'une chaîne sans espaces
-
-Retourne la longueur d'une chaîne après suppression des espaces.
-
-### Endpoint
-
-```http
-GET /api/string/length-without-spaces?input=Bonjour le monde !
-```
-
-### Exemple de réponse
-
-```json
-15
-```
+- calcul de longueur sans espaces
+- génération de salutation formatée
+- détection de point d'exclamation final
+- inversion de l'ordre des mots
+- comptage d'occurrences de caractères
+- conversion camelCase
+- comptage de voyelles
+- alternance majuscules / minuscules
+- normalisation des répétitions excessives de caractères
+- extraction d'initiales
+- masquage sécurisé de chaînes
+- vérification de palindrome
+- recherche de la plus longue séquence de caractères
+- troncature de texte avec points de suspension
+- capitalisation de mots
 
 ---
 
