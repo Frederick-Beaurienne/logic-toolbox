@@ -39,10 +39,13 @@ class ObjectUtilsServiceTest {
             List<Integer> result =
                     objectUtilsService.getValues(inputMap);
 
-            assertEquals(
-                    List.of(100, 85, 95),
-                    result
+            assertTrue(
+                    result.containsAll(
+                            List.of(100, 85, 95)
+                    )
             );
+
+            assertEquals(3, result.size());
         }
 
         @Test

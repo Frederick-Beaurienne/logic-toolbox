@@ -66,7 +66,8 @@ Certaines fonctionnalités Object intègrent également des choix de conception 
 - l'encodage sécurisé des paramètres d'URL
 - la gestion des structures imbriquées récursives
 - la normalisation des résultats numériques exposés par l'API
-- 
+- l'utilisation de transformations fonctionnelles génériques
+- l'encapsulation REST de comportements fonctionnels avancés
 Certaines implémentations intègrent volontairement des compromis techniques afin de conserver un équilibre entre simplicité algorithmique, lisibilité et pertinence métier.
 
 Par exemple, la normalisation des répétitions de caractères conserve les doubles lettres légitimes ("belle"), tout en réduisant les répétitions excessives liées aux erreurs de frappe ("Bonjouuuur" → "Bonjour"). Certaines situations ambiguës restent volontairement tolérées dans le cadre du périmètre de l'exercice.
@@ -80,9 +81,6 @@ Cette approche permet également de démontrer les choix techniques et les bonne
 # 🏗️ Architecture
 
 ```text
-# 🏗️ Architecture
-
-```text
 src
 ├── main
 │   ├── java/com/fred/logictoolbox
@@ -90,6 +88,7 @@ src
 │   │   │   └── GlobalExceptionHandler
 │   │   │
 │   │   ├── controller
+│   │   │   ├── ArrayObjectController
 │   │   │   ├── ObjectUtilsController
 │   │   │   └── StringController
 │   │   │
@@ -241,6 +240,14 @@ Une attention particulière a été portée à la gestion des erreurs de validat
 - comparaison détaillée des différences entre objets
 - conversion d'objets en paramètres d'URL
 - génération de statistiques avancées
+
+## Array Object
+
+- filtrage de tableaux d'objets selon une propriété
+- regroupement d'objets par valeur
+- recherche d'intersections entre tableaux d'objets
+- transformation fonctionnelle de tableaux d'objets
+- agrégation de données numériques
 
 ---
 

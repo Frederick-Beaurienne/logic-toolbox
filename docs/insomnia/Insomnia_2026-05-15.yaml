@@ -1,0 +1,1413 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: logic-toolbox
+meta:
+  id: wrk_3d36ae9ffa5740fcb8762f92955771d8
+  created: 1778835421452
+  modified: 1778835421452
+  description: ""
+collection:
+  - name: String
+    meta:
+      id: fld_00ef862860dd402faeaf651c0577830f
+      created: 1778835462967
+      modified: 1778858661040
+      sortKey: -1778858630076
+      description: ""
+    children:
+      - url: http://localhost:8080/api/string/greeting
+        name: Greeting - Format Name
+        meta:
+          id: req_1b3d0fbe801e4f7fbf08b28e9906ca58
+          created: 1778835467296
+          modified: 1778839792474
+          isPrivate: false
+          description: ""
+          sortKey: -1778835467296
+        method: GET
+        parameters:
+          - name: input
+            value: jean-pierre
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/length-without-spaces
+        name: String Length Without Spaces
+        meta:
+          id: req_49439417d525422ab36db1ab5f260327
+          created: 1778837235230
+          modified: 1778839809665
+          isPrivate: false
+          description: ""
+          sortKey: -1778835467396
+        method: GET
+        parameters:
+          - name: input
+            value: Bonjour le monde !
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/ends-with-exclamation
+        name: String Ends With Exclamation
+        meta:
+          id: req_4f217cb6b1b64df08d3d7cf178e75b67
+          created: 1778837466741
+          modified: 1778839773002
+          isPrivate: false
+          description: ""
+          sortKey: -1778578838501.5
+        method: GET
+        parameters:
+          - name: input
+            value: Je suis très satisfait !
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/reverse-words
+        name: String Reverse Words
+        meta:
+          id: req_1dc4cb7fdf3c49e28f407c759e49415e
+          created: 1778837648896
+          modified: 1778839775414
+          isPrivate: false
+          description: ""
+          sortKey: -1778536067035.75
+        method: GET
+        parameters:
+          - name: input
+            value: Je mange une pomme
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/length-without-spaces
+        name: exception handler
+        meta:
+          id: req_819d07d78e3848d3ae4f30241fcaf0ce
+          created: 1778840739101
+          modified: 1778840749651
+          isPrivate: false
+          description: ""
+          sortKey: -1778835467496
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/count-character-occurrences
+        name: String Count Character Occurrences
+        meta:
+          id: req_e56b9d07c7354ac7bc5c52db5642db5f
+          created: 1778841319727
+          modified: 1778841466064
+          isPrivate: false
+          description: ""
+          sortKey: -1778514681302.875
+        method: GET
+        parameters:
+          - name: input
+            value: Bonjour
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+          - name: character
+            value: o
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/to-camel-case
+        name: String To Camel Case
+        meta:
+          id: req_d664e1ad0941477eaa05c60729589d11
+          created: 1778841687387
+          modified: 1778845506093
+          isPrivate: false
+          description: ""
+          sortKey: -1778503988436.4375
+        method: GET
+        parameters:
+          - name: input
+            value: user_first_name
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/count-vowels
+        name: String Count Vowels
+        meta:
+          id: req_8a717d8213ce4e51827e50474a86347e
+          created: 1778841847683
+          modified: 1778841862380
+          isPrivate: false
+          description: ""
+          sortKey: -1778498642003.2188
+        method: GET
+        parameters:
+          - name: input
+            value: bonjour
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/alternate-case
+        name: String Alternate Case
+        meta:
+          id: req_2d18378f27a04ac8b48cceaeb611ab41
+          created: 1778842124087
+          modified: 1778842141361
+          isPrivate: false
+          description: ""
+          sortKey: -1778495968786.6094
+        method: GET
+        parameters:
+          - name: input
+            value: bonjour le monde
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/remove-consecutive-duplicates
+        name: String Remove Consecutive Duplicates
+        meta:
+          id: req_b5f1f71e845c495cae8cca0add2c6e8f
+          created: 1778842267084
+          modified: 1778842788797
+          isPrivate: false
+          description: ""
+          sortKey: -1778494632178.3047
+        method: GET
+        parameters:
+          - name: input
+            value: Bonjouuuur !!! J'ai besoiiiin d'aide.... belle
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/extract-initials
+        name: String Extract Initials
+        meta:
+          id: req_b38a6a7ab9424803ac8a44ca5ab9a260
+          created: 1778843805343
+          modified: 1778843822209
+          isPrivate: false
+          description: ""
+          sortKey: -1778493963874.1523
+        method: GET
+        parameters:
+          - name: input
+            value: Jean Pierre Dupont
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/mask
+        name: String Mask String
+        meta:
+          id: req_e97ce75b1b95496e83a100c83845b931
+          created: 1778843921290
+          modified: 1778843954882
+          isPrivate: false
+          description: ""
+          sortKey: -1778493629722.0762
+        method: GET
+        parameters:
+          - name: input
+            value: "1234567890123456"
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+          - name: visibleCharactersCount
+            value: "4"
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/is-palindrome
+        name: String Is Palindrome
+        meta:
+          id: req_c7ff9bcd26c84432a8ae7b0136560227
+          created: 1778844340773
+          modified: 1778844612061
+          isPrivate: false
+          description: ""
+          sortKey: -1778493462646.038
+        method: GET
+        parameters:
+          - name: input
+            value: Eh ! ça va la vache ?
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/longest-sequence
+        name: String Longest Sequence
+        meta:
+          id: req_6124bf9320404d3485c41eb465fd262c
+          created: 1778844771204
+          modified: 1778844789113
+          isPrivate: false
+          description: ""
+          sortKey: -1778493379108.019
+        method: GET
+        parameters:
+          - name: input
+            value: aaabbbbbcccc
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/truncate
+        name: String Truncate
+        meta:
+          id: req_ede4fe560b9041af826d3d16eb0e1a22
+          created: 1778844882027
+          modified: 1778845213130
+          isPrivate: false
+          description: ""
+          sortKey: -1778493337339.0095
+        method: GET
+        parameters:
+          - name: input
+            value: Ceci est une très longue description d'un produit
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+          - name: maxLength
+            value: "20"
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/string/capitalize-words
+        name: String Capitalize Words
+        meta:
+          id: req_2c9ddc40ec2349c4ade8eedcc021dd72
+          created: 1778845291827
+          modified: 1778845311140
+          isPrivate: false
+          description: ""
+          sortKey: -1778493316454.505
+        method: GET
+        parameters:
+          - name: input
+            value: bienvenue sur notre site web
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Object
+    meta:
+      id: fld_c2f6e7facc1348ef9331cbe56d56a2ea
+      created: 1778846743789
+      modified: 1778858652094
+      sortKey: -1778858629976
+      description: ""
+    children:
+      - url: http://localhost:8080/api/object/values
+        name: Object Get Values
+        meta:
+          id: req_370f324fd4664812a7301b29493ef41c
+          created: 1778846759310
+          modified: 1778848187914
+          isPrivate: false
+          description: ""
+          sortKey: -1778848187896
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "level1": 100,
+              "level2": 85,
+              "level3": 95
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/convert-euros-to-dollars
+        name: Object Convert Euros To Dollars
+        meta:
+          id: req_4d92c31d4cf148adb5e26411ad44f9cc
+          created: 1778848194056
+          modified: 1778848216013
+          isPrivate: false
+          description: ""
+          sortKey: -1778841827696
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "book": 20,
+              "pen": 5,
+              "notebook": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/merge
+        name: Object Merge Objects
+        meta:
+          id: req_b5af2e64f787400c9f6c5b87179393bd
+          created: 1778848810828
+          modified: 1778849448885
+          isPrivate: false
+          description: ""
+          sortKey: -1778838647596
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "firstObject": {
+                "january": 1000,
+                "february": 1200.54,
+                "march": "900"
+              },
+              "secondObject": {
+                "january": 800,
+                "february": 950,
+                "march": 1100
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/filter-out-of-stock
+        name: Object Filter Out Of Stock
+        meta:
+          id: req_2aff64df2ed74a49a0d09970ce4c92a3
+          created: 1778850414162
+          modified: 1778850465055
+          isPrivate: false
+          description: ""
+          sortKey: -1778837057546
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "laptop": 0,
+              "smartphone": 5,
+              "tablet": 0,
+              "headphones": 8
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/flat-to-nested
+        name: Object Flat To Nested
+        meta:
+          id: req_c7dbf3ae96ae415c9ff8c16f1f930fbe
+          created: 1778850688159
+          modified: 1778850701572
+          isPrivate: false
+          description: ""
+          sortKey: -1778836262521
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "app.name": "MyApp",
+              "app.version": "1.0.0",
+              "database.host": "localhost",
+              "database.port": 5432
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/find-keys-by-value
+        name: Object Find Keys By Value
+        meta:
+          id: req_9cc1a920ff8f40928e14d0ab341dcd5b
+          created: 1778851178006
+          modified: 1778851192201
+          isPrivate: false
+          description: ""
+          sortKey: -1778835865008.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "object": {
+                "laptop": 0,
+                "mouse": 5,
+                "keyboard": 0,
+                "monitor": 3
+              },
+              "searchedValue": 0
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/create-from-arrays
+        name: Object Create From Arrays
+        meta:
+          id: req_dac5cb0eb34a4290af60e625170d9123
+          created: 1778851551119
+          modified: 1778852117827
+          isPrivate: false
+          description: ""
+          sortKey: -1778835666252.25
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "keys": ["Alice", "Bob", "Charlie"],
+              "values": [100, 85, 90]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/count-values
+        name: Object Count Values
+        meta:
+          id: req_bbadffb2bc064c09b489a15b16f90994
+          created: 1778852335545
+          modified: 1778852360127
+          isPrivate: false
+          description: ""
+          sortKey: -1778835566874.125
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "order1": "pending",
+              "order2": "delivered",
+              "order3": "pending",
+              "order4": "cancelled",
+              "order5": "pending"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/extract-properties
+        name: Object Extract Properties
+        meta:
+          id: req_db7dbfe9af82478c970a6668bb202eae
+          created: 1778852633221
+          modified: 1778852646709
+          isPrivate: false
+          description: ""
+          sortKey: -1778835517185.0625
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "object": {
+                "name": "Jean Martin",
+                "email": "jean@email.com",
+                "password": "secret123",
+                "age": 35,
+                "address": "123 rue Principal"
+              },
+              "properties": [
+                "name",
+                "age"
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/sort-by-value
+        name: Object Sort By Value
+        meta:
+          id: req_4c779bc5773e42148fe7a95a7e42c4e1
+          created: 1778852823463
+          modified: 1778852842785
+          isPrivate: false
+          description: ""
+          sortKey: -1778835492340.5312
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "Alice": 85,
+              "Bob": 92,
+              "Charlie": 78,
+              "David": 95
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/find-max-value
+        name: Object Find Max Value
+        meta:
+          id: req_9627fbcebaef40d58279c183fffa7e52
+          created: 1778853858881
+          modified: 1778853870681
+          isPrivate: false
+          description: ""
+          sortKey: -1778835479918.2656
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "level1": 850,
+              "level2": 920,
+              "level3": 880,
+              "level4": 1020
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/create-from-pairs
+        name: Object Create From Pairs
+        meta:
+          id: req_97f6cf28b9754769952573f8fc847cd3
+          created: 1778854177010
+          modified: 1778854195418
+          isPrivate: false
+          description: ""
+          sortKey: -1778835473707.1328
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "pairs": [
+                ["pommes", 2.5],
+                ["bananes", 1.8],
+                ["oranges", 2.2]
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/find-value
+        name: Object Find Value
+        meta:
+          id: req_8276546e2b994e299b5edc37c8efdc6e
+          created: 1778854378509
+          modified: 1778854392938
+          isPrivate: false
+          description: ""
+          sortKey: -1778835470601.5664
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "object": {
+                "app": {
+                  "name": "MonApp",
+                  "settings": {
+                    "theme": "dark",
+                    "notifications": {
+                      "email": true,
+                      "push": false
+                    }
+                  }
+                }
+              },
+              "searchedValue": "dark"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/group-by-property
+        name: Object Group By Property
+        meta:
+          id: req_d5f52cb6277c43bca9c7a69f3859a675
+          created: 1778854536360
+          modified: 1778854547638
+          isPrivate: false
+          description: ""
+          sortKey: -1778835469048.7832
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "objects": [
+                { "name": "Alice", "level": "Débutant" },
+                { "name": "Bob", "level": "Intermédiaire" },
+                { "name": "Charlie", "level": "Débutant" },
+                { "name": "David", "level": "Avancé" }
+              ],
+              "property": "level"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/validate
+        name: Object Validate
+        meta:
+          id: req_3f9046a6f4454821bcc70d4ff92f895b
+          created: 1778854696980
+          modified: 1778854709305
+          isPrivate: false
+          description: ""
+          sortKey: -1778835468272.3916
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "object": {
+                "name": "Marie",
+                "age": 25,
+                "email": "marie@email.com"
+              },
+              "schema": {
+                "name": "string",
+                "age": "number",
+                "email": "string"
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/compare-differences
+        name: Object Compare Differences
+        meta:
+          id: req_b15a36258139473d850f93e9895c6b07
+          created: 1778855215210
+          modified: 1778855228101
+          isPrivate: false
+          description: ""
+          sortKey: -1778835467884.1958
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "firstObject": {
+                "name": "Jean Dupont",
+                "email": "jean@email.com",
+                "age": 30
+              },
+              "secondObject": {
+                "name": "Jean Dupont",
+                "email": "jean.dupont@email.com",
+                "age": 31,
+                "phone": "0123456789"
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/to-url-params
+        name: Object To URL Params
+        meta:
+          id: req_c52a38ea389f4d468f1504c2213f268e
+          created: 1778855394311
+          modified: 1778855467036
+          isPrivate: false
+          description: ""
+          sortKey: -1778835467690.098
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "query": "ordinateur portable",
+              "maxPrice": 1000,
+              "brand": "Dell",
+              "inStock": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/object/stats
+        name: Object Statistics
+        meta:
+          id: req_8f22f9489f2943deb47127ced6d804de
+          created: 1778856086540
+          modified: 1778856101860
+          isPrivate: false
+          description: ""
+          sortKey: -1778835467593.0488
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "january": 1000,
+              "february": 1200,
+              "march": 900,
+              "april": 1500
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Array-Object
+    meta:
+      id: fld_d28f43c1caf24839b8bc9abf24d2ed4f
+      created: 1778858629876
+      modified: 1778858629876
+      sortKey: -1778858629876
+      description: ""
+    children:
+      - url: http://localhost:8080/api/array-object/filter-by-property
+        name: Array Filter By Property
+        meta:
+          id: req_e3ac3b3bf3b94ff0af9d2f0e7cf77a6d
+          created: 1778858644514
+          modified: 1778858688024
+          isPrivate: false
+          description: ""
+          sortKey: -1778858668939
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "objects": [
+                {
+                  "name": "Alice",
+                  "active": true
+                },
+                {
+                  "name": "Bob",
+                  "active": false
+                },
+                {
+                  "name": "Charlie",
+                  "active": true
+                }
+              ],
+              "property": "active",
+              "value": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/array-object/group-by
+        name: Array Group By Property
+        meta:
+          id: req_2e8f12cf507d4285bc18ed1bcbf82ce4
+          created: 1778859062046
+          modified: 1778859076131
+          isPrivate: false
+          description: ""
+          sortKey: -1778853428417.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "objects": [
+                {
+                  "name": "Alice",
+                  "department": "IT"
+                },
+                {
+                  "name": "Bob",
+                  "department": "HR"
+                },
+                {
+                  "name": "Charlie",
+                  "department": "IT"
+                }
+              ],
+              "property": "department"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/array-object/find-intersection
+        name: Array Find Intersection
+        meta:
+          id: req_ce4d6805a4874c2dbc58fbecb980f138
+          created: 1778859215981
+          modified: 1778859228971
+          isPrivate: false
+          description: ""
+          sortKey: -1778850808156.75
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "firstArray": [
+                {
+                  "id": 1,
+                  "name": "Alice"
+                },
+                {
+                  "id": 2,
+                  "name": "Bob"
+                }
+              ],
+              "secondArray": [
+                {
+                  "id": 2,
+                  "name": "Bob"
+                },
+                {
+                  "id": 3,
+                  "name": "Charlie"
+                }
+              ],
+              "property": "id"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/array-object/transform
+        name: Array Transform
+        meta:
+          id: req_9f60eaa40f7e4565ade91920ec9bdf5d
+          created: 1778859481394
+          modified: 1778859494290
+          isPrivate: false
+          description: ""
+          sortKey: -1778849498026.375
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "objects": [
+                {
+                  "id": 1,
+                  "firstName": "John",
+                  "lastName": "Doe"
+                },
+                {
+                  "id": 2,
+                  "firstName": "Jane",
+                  "lastName": "Smith"
+                }
+              ],
+              "transformation": "FULL_NAME"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/array-object/aggregate
+        name: Array Aggregate Data
+        meta:
+          id: req_89d08cb84c044866b86dc8c5ec8faedd
+          created: 1778860034558
+          modified: 1778860057431
+          isPrivate: false
+          description: ""
+          sortKey: -1778848842961.1875
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "objects": [
+                {
+                  "category": "Food",
+                  "amount": 100
+                },
+                {
+                  "category": "Food",
+                  "amount": 50
+                },
+                {
+                  "category": "Income",
+                  "amount": 75
+                }
+              ],
+              "groupBy": "category",
+              "valueField": "amount"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5f8c53ce2d64e5a4db32f95b0c367f1e8ebe2ab1
+    created: 1778835421454
+    modified: 1778835421454
+environments:
+  name: Base Environment
+  meta:
+    id: env_5f8c53ce2d64e5a4db32f95b0c367f1e8ebe2ab1
+    created: 1778835421453
+    modified: 1778835421453
+    isPrivate: false
