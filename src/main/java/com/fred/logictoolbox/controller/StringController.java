@@ -1,6 +1,6 @@
 package com.fred.logictoolbox.controller;
 
-import com.fred.logictoolbox.common.response.ApiResponse;
+import com.fred.logictoolbox.model.payload.response.ApiResponse;
 import com.fred.logictoolbox.service.string.StringService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -18,7 +18,7 @@
 
 # 🚀 Présentation
 
-Logic Toolbox est un projet Spring Boot regroupant plusieurs exercices de logique et de manipulation de données.
+Logic Toolbox est un projet Spring Boot regroupant plusieurs exercices de logique, de manipulation de chaînes de caractères, de collections et d'objets complexes.
 
 L'objectif du projet est de démontrer :
 - des bonnes pratiques de développement
@@ -55,6 +55,18 @@ L'objectif est de proposer une implémentation complète mettant en avant :
 - la réutilisabilité des composants
 - les bonnes pratiques de développement backend
 
+L'exposition API privilégie volontairement des endpoints orientés cas d'usage métier plutôt qu'une abstraction générique complète des utilitaires internes.
+
+Certaines méthodes de service utilisent des fonctionnalités avancées Java (génériques, fonctions de transformation, programmation fonctionnelle, etc.) qui ne sont pas directement adaptées à une exposition REST réaliste. Les endpoints proposés encapsulent donc ces comportements dans des cas d'usage cohérents et documentés afin de conserver une API claire, exploitable et proche d'un contexte applicatif réel.
+
+Certaines fonctionnalités Object intègrent également des choix de conception orientés robustesse backend et cohérence API, notamment :
+- la validation de schémas dynamiques
+- la gestion des collisions lors des inversions clé/valeur
+- la gestion des payloads JSON invalides
+- l'encodage sécurisé des paramètres d'URL
+- la gestion des structures imbriquées récursives
+- la normalisation des résultats numériques exposés par l'API
+- 
 Certaines implémentations intègrent volontairement des compromis techniques afin de conserver un équilibre entre simplicité algorithmique, lisibilité et pertinence métier.
 
 Par exemple, la normalisation des répétitions de caractères conserve les doubles lettres légitimes ("belle"), tout en réduisant les répétitions excessives liées aux erreurs de frappe ("Bonjouuuur" → "Bonjour"). Certaines situations ambiguës restent volontairement tolérées dans le cadre du périmètre de l'exercice.
@@ -68,23 +80,38 @@ Cette approche permet également de démontrer les choix techniques et les bonne
 # 🏗️ Architecture
 
 ```text
+# 🏗️ Architecture
+
+```text
 src
 ├── main
-│   └── java/com/fred/logictoolbox
-│       ├── common
-│       │   ├── exception
-│       │   └── response
-│       ├── controller
-│       ├── service
-│       │   ├── arrayobject
-│       │   ├── objectutils
-│       │   └── string
-│       └── LogicToolboxApplication
+│   ├── java/com/fred/logictoolbox
+│   │   ├── common.exception
+│   │   │   └── GlobalExceptionHandler
+│   │   │
+│   │   ├── controller
+│   │   │   ├── ObjectUtilsController
+│   │   │   └── StringController
+│   │   │
+│   │   ├── model.payload
+│   │   │   ├── request
+│   │   │   └── response
+│   │   │
+│   │   ├── service
+│   │   │   ├── arrayobject
+│   │   │   ├── objectutils
+│   │   │   └── string
+│   │   │
+│   │   └── LogicToolboxApplication
+│   │
+│   └── resources
 │
-└── test
-    └── java/com/fred/logictoolbox
-        ├── controller
-        └── service
+├── test
+│   └── java/com/fred/logictoolbox
+│       ├── controller
+│       └── service
+│
+└── insomnia
 ```
 
 L'application suit une architecture en couches simple basée sur :
@@ -161,6 +188,7 @@ docs/insomnia/
 
 L'application utilise un Global Exception Handler afin de centraliser la gestion des erreurs et garantir des réponses API cohérentes.
 
+Une attention particulière a été portée à la gestion des erreurs de validation JSON, des payloads incohérents et des cas limites afin d'éviter les erreurs serveur non contrôlées.
 ## Exemple de réponse d'erreur
 
 ```json
@@ -187,11 +215,32 @@ L'application utilise un Global Exception Handler afin de centraliser la gestion
 - alternance majuscules / minuscules
 - normalisation des répétitions excessives de caractères
 - extraction d'initiales
-- masquage sécurisé de chaînes
+- masquage sécurisé de données sensibles
 - vérification de palindrome
 - recherche de la plus longue séquence de caractères
 - troncature de texte avec points de suspension
 - capitalisation de mots
+
+## Object
+
+- récupération des valeurs d'un objet
+- transformation des valeurs d'un objet
+- fusion d'objets numériques
+- filtrage d'objets selon une condition
+- conversion d'objets plats en structures imbriquées
+- recherche de clés par valeur
+- création d'objets à partir de tableaux
+- comptage des occurrences de valeurs
+- extraction de propriétés spécifiques
+- tri d'objets par valeur
+- recherche de la valeur maximale
+- création d'objets à partir de paires clé-valeur
+- recherche de valeurs dans des objets imbriqués
+- regroupement d'objets par propriété
+- validation d'objets via schéma dynamique
+- comparaison détaillée des différences entre objets
+- conversion d'objets en paramètres d'URL
+- génération de statistiques avancées
 
 ---
 

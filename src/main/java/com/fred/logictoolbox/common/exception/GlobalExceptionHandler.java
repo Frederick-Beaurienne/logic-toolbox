@@ -1,9 +1,11 @@
 package com.fred.logictoolbox.common.exception;
 
-import com.fred.logictoolbox.common.response.ApiResponse;
+import com.fred.logictoolbox.model.payload.response.ApiResponse;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -62,6 +64,83 @@ public class GlobalExceptionHandler {
         );
 
         ApiResponse<Void> response = ApiResponse.error(message);
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(response);
+    }
+
+    // ---------- JSON PARSING EXCEPTIONS ---------- //
+
+    /**
+     * Handles invalid or unreadable JSON request bodies.
+     *
+     * @param exception the thrown exception
+     * @return a standardized bad request response
+     */
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ApiResponse<Void>> handleHttpMessageNotReadableException(
+            HttpMessageNotReadableException exception
+    ) {
+
+        ApiResponse<Void> response = ApiResponse.error(
+                "Le format des données JSON est invalide"
+        );
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(response);
+    }
+
+    // ---------- BUSINESS LOGIC EXCEPTIONS ---------- //
+
+    /**
+     * Handles illegal argument exceptions.
+     *
+     * @param exception the thrown exception
+     * @return a standardized bad request response
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ApiResponse<Void>> handleIllegalArgumentException(
+            IllegalArgumentException exception
+    ) {
+
+        ApiResponse<Void> response = ApiResponse.error(
+                exception.getMessage()
+        );
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(response);
+    }
+
+    // ---------- VALIDATION EXCEPTIONS ---------- //
+
+    /**
+     * Handles bean validation errors on request bodies.
+     *
+     * @param exception the thrown exception
+     * @return a standardized bad request response
+     */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ApiResponse<Void>> handleMethodArgumentNotValidException(
+            MethodArgumentNotValidException exception
+    ) {
+
+        String errorMessage = exception
+                .getBindingResult()
+                .getFieldErrors()
+                .stream()
+                .map(error ->
+                        error.getField()
+                                + " : "
+                                + error.getDefaultMessage()
+                )
+                .findFirst()
+                .orElse("Requête invalide");
+
+        ApiResponse<Void> response =
+                ApiResponse.error(errorMessage);
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)

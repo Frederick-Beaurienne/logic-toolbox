@@ -1,4 +1,4 @@
-package com.fred.logictoolbox.common.response;
+package com.fred.logictoolbox.model.payload.response;
 
 /**
  * Standard API response wrapper.
