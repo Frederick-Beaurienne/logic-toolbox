@@ -1,5 +1,6 @@
 # Logic Toolbox
 
+
 ## 📚 Sommaire
 
 - [Présentation](#-présentation)
@@ -7,6 +8,8 @@
 - [Architecture](#️-architecture)
 - [Installation](#️-installation)
 - [Documentation API](#-documentation-api)
+- [Format des réponses API](#-format-des-réponses-api)
+- [Gestion des erreurs API](#-gestion-des-erreurs-api)
 - [Collection Insomnia](#-collection-insomnia)
 - [Fonctionnalités disponibles](#-fonctionnalités-disponibles)
 - [Exécution des tests](#-exécution-des-tests)
@@ -36,6 +39,7 @@ Au-delà de la résolution des exercices demandés, le projet intègre :
 - une exposition des fonctionnalités via API REST
 - une documentation API Swagger/OpenAPI complète et enrichie via annotations
 - des réponses API standardisées
+- une gestion centralisée des erreurs via Global Exception Handler
 - des tests unitaires JUnit
 - des tests API/controller Spring Boot
 - de la documentation JavaDoc
@@ -136,6 +140,22 @@ Les endpoints REST utilisent un format de réponse standardisé afin de garantir
   "success": true,
   "message": "Longueur calculée avec succès",
   "data": 15
+}
+```
+
+---
+
+# ❌ Gestion des erreurs API
+
+L'application utilise un Global Exception Handler afin de centraliser la gestion des erreurs et garantir des réponses API cohérentes.
+
+## Exemple de réponse d'erreur
+
+```json
+{
+  "success": false,
+  "message": "Le paramètre 'input' est obligatoire",
+  "data": null
 }
 ```
 
